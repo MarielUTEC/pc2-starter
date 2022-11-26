@@ -30,7 +30,7 @@ export default {
         this.country = countries[Math.floor(Math.random() * countries.length)];
         this.capital = "";
       } else {
-        alert("Incorrecto");
+        this.country = countries[Math.floor(Math.random() * countries.length)];
       }
     },
   },
