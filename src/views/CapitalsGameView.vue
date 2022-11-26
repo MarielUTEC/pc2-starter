@@ -49,7 +49,7 @@ export default {
       <!--TODO: CREAR EL COMPONENTE PARA VISUALIZAR EL PAIS-->
       <CountryComponent
         :name="country.name"
-        :capital="country.capital"
+        :capital="'???'"
         :currency_name="country.currency_name"
         :currency="country.currency"
         :region="country.region"
