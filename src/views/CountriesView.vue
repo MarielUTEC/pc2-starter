@@ -1,6 +1,10 @@
 <script>
 import countries from "/src/datasets/countries.json";
 import CountryComponent from "../components/CountryComponent.vue";
+// filters.js
+import Vue from "vue";
+
+
 
 export default {
   name: "CountriesView",
@@ -19,7 +23,13 @@ export default {
   methods: {
     filtrarPais(e) {
       // TODO: Implementar. filtra el país de acuerdo al valor del input. Hint: Recuerda la función filter
-      const filtro = e.target.value;
+      Vue.filter("filter", function (value) {
+        if (!value) return "";
+        value = value.toString();
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      });
+      this.paisActual = e.target.value;
+      //const filtro = e.target.value;
     },
   },
 };
@@ -44,6 +54,7 @@ export default {
       :currency="country.currency"
       :region="country.region"
       :code="country.iso2"
+      :clickeable="true"
 
     ></CountryComponent>
   </div>
